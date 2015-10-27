@@ -1,0 +1,36 @@
+
+println("************RECURSION****************\n");
+println("What term of the fibonacci sequence would you like?");
+int n = readInt();
+println("The "+ n + " term of the fibonacci sequence is " + fibonacci(n));
+
+println("************ITERATION****************\n");
+println("What term of the fibonacci sequence would you like?");
+n = readInt();
+println("The "+ n + " term of the fibonacci sequence is " + fibonacciIterative(n));
+
+int fibonacci(int n) {
+	if(n==1 || n==2) {
+		return 1;
+	} else {
+		return fibonacci(n-1) + fibonacci(n-2);
+	}
+}
+
+int fibonacciIterative(int n) {
+	if (n==1 || n==2) {
+		return 1;
+	} else {
+		int a = 1;
+		int b = 1;
+		int result = 0;
+		while(n>2) {
+			result = a + b;
+			a = b;
+			b = result;
+			n--;
+		}
+		return result;
+	}
+	
+}

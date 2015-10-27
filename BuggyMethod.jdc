@@ -1,0 +1,10 @@
+println("Please enter a number here:");
+int n = readInt();
+println("The result is " + buggyMethod(n));
+
+String buggyMethod(int n) {
+	if(n<=0) {
+		return "";
+	}
+	return n + " " + buggyMethod(n-2);
+}

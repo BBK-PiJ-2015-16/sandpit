@@ -1,0 +1,9 @@
+println(summer(5));
+
+int summer(int n) {
+	if (n<=1) {
+		return 1;
+	} else {
+		return n + summer(n-1);
+	}
+}
