@@ -1,0 +1,23 @@
+println("************RECURSION****************\n");
+println("Enter the factorial you would like:");
+int n = readInt();
+println(n + " factorial is " + factorial(n));
+
+println("************ITERATION****************\n");
+println("Enter the factorial you would like:");
+n = readInt();
+println(n + " factorial is " + factorialIterative(n));
+
+int factorial(int n) {
+	if (n<=1) { return 1; }
+	return n * factorial(n-1);
+}
+
+int factorialIterative (int n){
+	if(n<=1) { return 1;}
+	int result = n;
+	for (int count = n-1; count > 1;count--) {
+		result = result * count;
+	}
+	return result;
+}
