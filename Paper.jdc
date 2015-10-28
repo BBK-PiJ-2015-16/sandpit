@@ -1,0 +1,9 @@
+println("Please enter the paper size you would like:");
+String paper = readLine();
+print("Height of paper is " + paperSize(paper) + ", width is " + paperSize(paper)*0.70630202);
+int paperSize(String paper) {
+	if (paper.equals("A0")) {
+		return 841;
+	}
+	return 0;
+}
