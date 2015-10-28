@@ -1,9 +1,15 @@
+//Do the error checking before the function I think
+
 println("Please enter the paper size you would like:");
 String paper = readLine();
-print("Height of paper is " + paperSize(paper) + ", width is " + paperSize(paper)*0.70630202);
-int paperSize(String paper) {
+print("Width of paper is " + paperSize(paper) + ", width is " + paperSize(paper)*);
+
+int paperSize(String paper) { //always returns width
 	if (paper.equals("A0")) {
 		return 841;
 	}
-	return 0;
+	if (paper.equals("A1")) {
+		return 594;
+	}
+	return paperSize(paper-2)/2;
 }
