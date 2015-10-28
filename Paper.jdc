@@ -2,7 +2,7 @@
 
 println("Please enter the paper size you would like:");
 String paper = readLine();
-print("Width of paper is " + paperSize(paper) + ", width is " + paperSize(paper)*1.414);
+print("Width of paper is " + paperSize(paper) + ", width is " + Math.round(paperSize(paper)*1.41379310));
 
 int paperSize(String paper) { //always returns width
 	if (paper.equals("A0")) {
@@ -11,7 +11,7 @@ int paperSize(String paper) { //always returns width
 	if (paper.equals("A1")) {
 		return 594;
 	}
-	int paperNum = Integer.parseInt(paper.substring(1,2))-2;	
+	int paperNum = Integer.parseInt(paper.substring(1))-2;	
 	paper = paper.substring(0,1) + paperNum;
 	return paperSize(paper)/2;
 }
