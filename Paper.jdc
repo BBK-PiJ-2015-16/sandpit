@@ -1,15 +1,20 @@
-//Do the error checking before the function I think
+//How do you get the method to print the number without it printing after every return
+//Is it okay to error check the input before the method or should this be done in the method?
 
 println("Please enter the paper size you would like:");
 String paper = readLine();
 print("Width of paper is " + paperSize(paper) + ", width is " + Math.round(paperSize(paper)*1.41379310));
 
 int paperSize(String paper) { //always returns width
-	if (paper.equals("A0")) {
-		return 841;
-	}
-	if (paper.equals("A1")) {
-		return 594;
+	if (paper.equals("A0")) { return 841;}
+	if (paper.equals("A1")) { return 594;}
+	if(paper.charAt(1) == '0') {
+		if (paper.equals("A00")) {
+			paper = "A1";
+		} else {
+			paper = paper.substring(0,paper.length()-2);
+		}
+		return paperSize(paper)*2;
 	}
 	int paperNum = Integer.parseInt(paper.substring(1))-2;	
 	paper = paper.substring(0,1) + paperNum;
