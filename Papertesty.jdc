@@ -1,0 +1,12 @@
+println(Math.round(smallerPaper(1))+ ", " + Math.round(smallerPaper(1)/Math.sqrt(2)));
+
+double smallerPaper (int n) {
+  double height = 1189;
+  
+  if(n == 0) {
+    return height;
+  }
+	
+  return smallerPaper(n-1) /  Math.sqrt(2);
+
+}
